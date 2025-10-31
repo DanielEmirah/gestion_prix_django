@@ -1,0 +1,31 @@
+{% extends 'pricing/base.html' %}
+{% block title %}Liste des Produits{% endblock %}
+{% block content %}
+<a href="{% url 'product_create' %}" class="btn btn-primary mb-3">+ Ajouter un produit</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Prix d'achat</th>
+            <th>Prix de vente</th>
+            <th>Marge</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></td>
+            <td>{{ product.purchase_price }} Ar</td>
+            <td>{{ product.selling_price }} Ar</td>
+            <td>{{ product.margin }} Ar</td>
+            <td>
+                <a href="{% url 'product_update' product.pk %}" class="btn btn-sm btn-warning">✏️</a>
+                <a href="{% url 'product_delete' product.pk %}" class="btn btn-sm btn-danger">🗑️</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

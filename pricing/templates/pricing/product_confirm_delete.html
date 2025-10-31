@@ -1,0 +1,11 @@
+{% extends 'pricing/base.html' %}
+{% block title %}Supprimer le Produit{% endblock %}
+{% block content %}
+<h3 class="text-danger">Supprimer "{{ product.name }}" ?</h3>
+<p>Cette action est irréversible.</p>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Confirmer la suppression</button>
+    <a href="{% url 'product_list' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}
