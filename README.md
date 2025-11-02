@@ -19,7 +19,7 @@ Ce projet illustre la maîtrise de Django, du CRUD, des templates et du workflow
 
 | Technologie             | Utilisation                |
 | ----------------------- | -------------------------- |
-| **Python 3.12**         | Langage principal          |
+| **Python**         | Langage principal          |
 | **Django 5.2.7**        | Framework web              |
 | **SQLite (par défaut)** | Base de données            |
 | **Bootstrap 5**         | Interface utilisateur      |
